@@ -481,7 +481,7 @@ public class ODatabaseDocumentDistributed extends ODatabaseDocumentEmbedded {
         }
       }
     } else if (record instanceof ODocument)
-      schemaClass = ODocumentInternal.getImmutableSchemaClass(((ODocument) record));
+      schemaClass = ((ODocument) record).getSchemaClass();
     // If the cluster id was set check is validity
     if (rid.getClusterId() > ORID.CLUSTER_ID_INVALID) {
       if (schemaClass != null) {
